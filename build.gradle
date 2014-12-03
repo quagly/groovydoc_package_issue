@@ -1,0 +1,18 @@
+apply plugin: 'base'
+apply plugin: 'groovy'
+
+def groovyVer = '2.3.8'
+// note GradleVersion is an internal class and may change
+// I have not found another way to print gradle version
+println GradleVersion.current() 
+
+defaultTasks 'groovyDoc'
+
+repositories {
+  mavenCentral()
+  jcenter()
+}
+
+dependencies {
+  compile "org.codehaus.groovy:groovy-all:${groovyVer}"
+}
